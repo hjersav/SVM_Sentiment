@@ -23,7 +23,7 @@ home = os.getcwd()
 np.random.seed(1000)
 corpus = pd.read_csv(f"{home}/corpus.csv", encoding="latin-1")
 
-# Rapikan data
+# Tidying up the data
 corpus['text'].dropna(inplace=True)
 corpus['text'] = [rep.lower() for rep in corpus['text']]
 corpus['text'] = [nl.tokenize.word_tokenize(tok) for tok in corpus['text']]
